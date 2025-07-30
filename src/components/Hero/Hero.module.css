@@ -1,0 +1,15 @@
+.hero {
+  position: relative;
+  background: url("/images/Hero.jpg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 2rem 3rem;
+  text-align: center;
+  border-radius: 12px;
+}

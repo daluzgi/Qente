@@ -1,14 +1,25 @@
-import "./App.css";
+// src/App.jsx
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/globals.css"; // ya lo importaste en main.jsx, pero no pasa nada si queda doble
 
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home";
+import WhatsappButton from "./components/WhatsAppButton/WhatsappButton";
+
+export default function App() {
   return (
-    <>
-      <p>HI FROM REACT!</p>
-      <button style={{ background: "var(--color-gold)", color: "#fff" }}>
-        Reservar mesa
-      </button>
-    </>
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        {/* landing principal */}
+        <Route path="/" element={<Home />} />
+        {/* si luego agregas /reservas, /menu, etc. */}
+      </Routes>
+
+      <WhatsappButton />
+    </BrowserRouter>
   );
 }
-
-export default App;
