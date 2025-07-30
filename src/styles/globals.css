@@ -1,0 +1,14 @@
+:root {
+  --color-brown-dark: #5b3928;
+  --color-brown: #7d675a;
+  --color-gold: #c8a05a;
+  --color-cream: #eae6e2;
+  --color-black-soft: #231f1d;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-black-soft);
+  font-family: "Space Grotesk", sans-serif;
+}
