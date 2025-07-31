@@ -1,15 +1,41 @@
 .hero {
   position: relative;
-  background: url("/images/Hero.jpg") center/cover no-repeat;
+  background: url("public/images/Hero.jpg") center/cover no-repeat;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .overlay {
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
   padding: 2rem 3rem;
   text-align: center;
   border-radius: 12px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.titleBold {
+  font-family: var(--font-title);
+  font-weight: 700;
+}
+.titleLight {
+  font-family: var(--font-title);
+  font-weight: 400;
+}
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2.2vw, 1.25rem);
+  letter-spacing: 0.25em;
+  margin-top: 0.5rem;
 }

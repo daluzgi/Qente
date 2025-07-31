@@ -8,6 +8,7 @@ import {
 import { LinkContainer } from "react-router-bootstrap";
 import { BsWhatsapp } from "react-icons/bs";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [expanded, setExpanded] = useState(false);
@@ -19,10 +20,17 @@ export default function Navbar() {
       variant="dark"
       expand="lg"
       expanded={expanded}
-      className="shadow-sm"
+      className="shadow-sm px-3"
     >
       <Container fluid>
-        <BsNavbar.Brand href="/">Qente Mikhuy</BsNavbar.Brand>
+        <BsNavbar.Brand
+          as={Link}
+          to="/"
+          onClick={close}
+          className="d-flex align-items-center gap-2"
+        >
+          <img src="/img/logo1.png" alt="Qente logo" height="50" />
+        </BsNavbar.Brand>
 
         <BsNavbar.Toggle onClick={() => setExpanded(!expanded)} />
 

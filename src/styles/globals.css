@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Montserrat:wght@500&display=swap");
+
 :root {
+  --font-title: "Bodoni Moda", serif;
+  --font-subtitle: "Montserrat", sans-serif;
   --color-brown-dark: #5b3928;
   --color-brown: #7d675a;
   --color-gold: #c8a05a;
