@@ -16,3 +16,7 @@ body {
   color: var(--color-black-soft);
   font-family: "Space Grotesk", sans-serif;
 }
+
+body {
+  margin: 0;
+}

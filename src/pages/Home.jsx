@@ -2,13 +2,14 @@ import Hero from "../components/Hero/Hero";
 import SectionCard from "../components/SectionCard/SectionCard";
 import VideoBanner from "../components/VideoBanner/VideoBanner";
 import Footer from "../components/Footer/Footer";
+import Team from "../components/Team/Team";
 
 export default function Home() {
   return (
     <>
       <Hero />
 
-      <div className="container my-5 d-flex flex-column gap-5">
+      <div className="my-5 d-flex flex-column gap-4 px-0">
         <SectionCard
           title="Nuestra cocina de raíces andinas"
           img="/images/Section1.jpg"
@@ -23,6 +24,7 @@ export default function Home() {
       </div>
 
       <VideoBanner />
+      <Team />
       <Footer />
     </>
   );
