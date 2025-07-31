@@ -1,3 +1,9 @@
+/* SectionCard.css */
+.section-card {
+  margin-left: 0; /* evita “sangría” del row */
+  margin-right: 0;
+}
+
 .section-card img {
   width: 100%;
   height: 100%;
@@ -5,10 +11,14 @@
 }
 
 .section-card .col-md-6 {
-  padding: 0; /* quita espacios que dejaban ver el fondo */
-  height: 100%;
+  padding: 0 !important; /* override de Bootstrap */
 }
 
 .section-text {
-  padding: clamp(1rem, 4vw, 2rem);
+  background: var(--color-cream);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
 }
