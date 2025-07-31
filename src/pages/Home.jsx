@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <div className="my-5 d-flex flex-column gap-4 px-0">
+      <div className="my-5 d-flex flex-column gap-4">
         <SectionCard
           title="Nuestra cocina de raíces andinas"
           img="/images/Section1.jpg"
