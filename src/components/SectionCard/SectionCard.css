@@ -1,7 +1,7 @@
-/* SectionCard.css */
+/* ---------- Layout base ---------- */
 .section-card {
-  margin-left: 0; /* evita “sangría” del row */
-  margin-right: 0;
+  margin: 0 !important; /* anula gutter lateral del row  */
+  overflow: hidden;
 }
 
 .section-card img {
@@ -11,13 +11,84 @@
 }
 
 .section-card .col-md-6 {
-  padding: 0 !important; /* override de Bootstrap */
+  padding: 0 !important; /* quita padding/gutter columnas */
+  height: 100%;
 }
+
+/* ---------- Bloque de texto ---------- */
 .section-text {
-  background: var(--color-cream);
-  padding: clamp(1.5rem, 4vw, 3rem) !important; /* fuerza el relleno */
+  position: relative;
+  background: rgba(200, 160, 90, 0.82); /* dorado translúcido */
+  padding: clamp(1.5rem, 4vw, 3rem);
   min-height: 100%;
   display: flex;
+  align-items: center; /* centra verticalmente section-inner */
+  text-align: center; /* móvil */
+  color: #000;
+}
+
+/* degradado suave opcional */
+.section-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(200, 160, 90, 0.9) 0%,
+    rgba(200, 160, 90, 0.78) 50%,
+    rgba(200, 160, 90, 0.9) 100%
+  );
+  z-index: -1;
+}
+
+/* ---------- Wrapper interno ---------- */
+.section-inner {
+  max-width: 540px; /* limita ancho de líneas grandes */
+  margin: 0 auto; /* centrado en mobile */
+  gap: 1.25rem;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.section-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.4rem 1.25rem; /* antes 0.5 / 1.5  */
+  width: fit-content; /* ya no ocupa todo el ancho */
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.section-btn:hover,
+.section-btn:focus {
+  background: #fff;
+  color: var(--color-brown-dark);
+}
+
+/* ---------- Desktop spacing ---------- */
+@media (min-width: 768px) {
+  .section-card:not(.flex-md-row-reverse) .section-text {
+    text-align: left;
+  }
+  .section-card:not(.flex-md-row-reverse) .section-inner {
+    margin-left: clamp(2.5rem, 6vw, 6rem);
+  }
+
+  .section-card.flex-md-row-reverse .section-text {
+    text-align: right;
+  }
+  .section-card.flex-md-row-reverse .section-inner {
+    margin-right: clamp(2.5rem, 6vw, 6rem);
+  }
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 767.98px) {
+  .section-text {
+    padding: 2rem 1.5rem;
+  }
+  .section-text .btn {
+    align-self: center;
+  }
 }
