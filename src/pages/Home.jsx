@@ -9,6 +9,10 @@ export default function Home() {
     <>
       <Hero />
 
+      <div className="bg-red-400 text-white p-4 rounded">
+        Tailwind v4 andando 🚀
+      </div>
+
       <div className="my-5 d-flex flex-column gap-4">
         <SectionCard
           title="Nuestra cocina de raíces andinas"

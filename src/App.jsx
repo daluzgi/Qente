@@ -1,7 +1,6 @@
 // src/App.jsx
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/globals.css"; // ya lo importaste en main.jsx, pero no pasa nada si queda doble
-
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "./styles/globals.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
