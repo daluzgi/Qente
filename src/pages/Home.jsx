@@ -9,25 +9,23 @@ export default function Home() {
     <>
       <Hero />
 
-      <div className="bg-red-400 text-white p-4 rounded">
-        Tailwind v4 andando 🚀
-      </div>
-
-      <div className="my-5 d-flex flex-column gap-4">
+      {/* wrapper Tailwind */}
+      <section className="flex flex-col gap-12 my-20">
         <SectionCard
           title="Nuestra cocina de raíces andinas"
-          text="Text test. Text test. Text test. Text test. Text test.Text test. Text test. Text test. Text test."
+          text="Text test. Text test. Text test. Text test. Text test. Text test. Text test. Text test. Text test."
           img="/images/Section1.jpg"
           to="#reservas"
         />
+
         <SectionCard
           title="Ingredientes locales, sabor auténtico"
-          text="Text test. Text test. Text test. Text test. Text test.Text test. Text test. Text test. Text test."
+          text="Text test. Text test. Text test. Text test. Text test. Text test. Text test. Text test. Text test."
           img="/images/Section2.jpg"
           to="#reservas"
           reverse
         />
-      </div>
+      </section>
 
       <VideoBanner />
       <Team />
