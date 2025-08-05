@@ -12,11 +12,13 @@ export default function Home() {
       <div className="my-5 d-flex flex-column gap-4">
         <SectionCard
           title="Nuestra cocina de raíces andinas"
+          text="Text test. Text test. Text test. Text test. Text test.Text test. Text test. Text test. Text test."
           img="/images/Section1.jpg"
           to="#reservas"
         />
         <SectionCard
           title="Ingredientes locales, sabor auténtico"
+          text="Text test. Text test. Text test. Text test. Text test.Text test. Text test. Text test. Text test."
           img="/images/Section2.jpg"
           to="#reservas"
           reverse

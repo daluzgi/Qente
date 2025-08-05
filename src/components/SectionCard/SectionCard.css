@@ -1,34 +1,39 @@
-/* ---------- Layout base ---------- */
+/* ---------- Flex layout ---------- */
 .section-card {
-  margin: 0 !important; /* anula gutter lateral del row  */
+  display: flex;
+  flex-direction: column; /* mobile */
   overflow: hidden;
 }
 
+@media (min-width: 768px) {
+  .section-card {
+    flex-direction: row;
+  }
+  .section-card.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ---------- Columna de imagen ---------- */
 .section-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  flex: 1 1 50%;
 }
 
-.section-card .col-md-6 {
-  padding: 0 !important; /* quita padding/gutter columnas */
-  height: 100%;
-}
-
-/* ---------- Bloque de texto ---------- */
+/* ---------- Columna de texto ---------- */
 .section-text {
+  flex: 1 1 50%;
   position: relative;
-  background: rgba(200, 160, 90, 0.82); /* dorado translúcido */
-  padding: clamp(1.5rem, 4vw, 3rem);
-  min-height: 100%;
-  display: flex;
-  align-items: center; /* centra verticalmente section-inner */
-  text-align: center; /* móvil */
+  background: rgba(200, 160, 90, 0.85); /* dorado translúcido */
   color: #000;
+  display: flex;
+  align-items: center;
 }
 
-/* degradado suave opcional */
 .section-text::before {
+  /* degradado opcional */
   content: "";
   position: absolute;
   inset: 0;
@@ -41,54 +46,39 @@
   z-index: -1;
 }
 
-/* ---------- Wrapper interno ---------- */
+/* ---------- Contenido interno ---------- */
 .section-inner {
-  max-width: 540px; /* limita ancho de líneas grandes */
-  margin: 0 auto; /* centrado en mobile */
-  gap: 1.25rem;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 5vw, 3.5rem);
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+  text-align: center; /* móvil */
 }
 
-.section-btn {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  padding: 0.4rem 1.25rem; /* antes 0.5 / 1.5  */
-  width: fit-content; /* ya no ocupa todo el ancho */
-  font-weight: 500;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.section-btn:hover,
-.section-btn:focus {
-  background: #fff;
-  color: var(--color-brown-dark);
-}
-
-/* ---------- Desktop spacing ---------- */
 @media (min-width: 768px) {
-  .section-card:not(.flex-md-row-reverse) .section-text {
+  /* texto se alinea al lado opuesto de la imagen */
+  .section-card:not(.reverse) .section-inner {
     text-align: left;
   }
-  .section-card:not(.flex-md-row-reverse) .section-inner {
-    margin-left: clamp(2.5rem, 6vw, 6rem);
-  }
-
-  .section-card.flex-md-row-reverse .section-text {
+  .section-card.reverse .section-inner {
     text-align: right;
-  }
-  .section-card.flex-md-row-reverse .section-inner {
-    margin-right: clamp(2.5rem, 6vw, 6rem);
   }
 }
 
-/* ---------- Mobile tweaks ---------- */
-@media (max-width: 767.98px) {
-  .section-text {
-    padding: 2rem 1.5rem;
-  }
-  .section-text .btn {
-    align-self: center;
-  }
+/* ---------- Botón ---------- */
+.section-btn {
+  align-self: center;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.4rem 1.25rem;
+  width: fit-content;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.section-btn:hover {
+  background: #fff;
+  color: var(--color-brown-dark);
 }

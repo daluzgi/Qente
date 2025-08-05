@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./SectionCard.css";
 
-export default function SectionCard({ title, img, to, reverse }) {
+export default function SectionCard({ title, text, img, to, reverse }) {
   return (
     <div
       className={`row g-0 section-card align-items-center ${
@@ -17,6 +17,7 @@ export default function SectionCard({ title, img, to, reverse }) {
       <div className="col-md-6 section-text">
         <div className="section-inner d-flex flex-column gap-3">
           <h2 className="mb-0">{title}</h2>
+          <p>{text}</p>
           <Link to={to} className="btn section-btn">
             Conocer más
           </Link>
