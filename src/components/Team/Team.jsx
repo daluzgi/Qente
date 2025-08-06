@@ -1,27 +1,30 @@
-import "./Team.css";
-
+// src/components/Team/Team.jsx
 export default function Team() {
   return (
-    <section id="equipo" className="team-section my-5">
-      <div className="team-overlay">
-        <h2>El equipo</h2>
-      </div>
+    <section id="equipo" className="relative my-20">
+      {/* título centrado — se superpone a las fotos */}
+      <h2
+        className="
+          absolute inset-0 z-10 flex items-center justify-center
+          font-serifBrand font-bold text-white text-3xl md:text-4xl
+          pointer-events-none
+        "
+      >
+        Nuestro&nbsp;equipo
+      </h2>
 
-      <div className="row g-0">
-        <div className="col-6">
-          <img
-            src="public/images/Team1.jpg"
-            alt="Team1"
-            className="w-100 h-100"
-          />
-        </div>
-        <div className="col-6">
-          <img
-            src="public/images/Team2.jpg"
-            alt="Team2"
-            className="w-100 h-100"
-          />
-        </div>
+      {/* grid de 2 columnas en desktop, 1 en mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <img
+          src="/images/Team1.jpg"
+          alt="Miembro del equipo"
+          className="w-full h-[45vh] md:h-[65vh] object-cover"
+        />
+        <img
+          src="/images/Team2.jpg"
+          alt="Miembro del equipo"
+          className="w-full h-[45vh] md:h-[65vh] object-cover"
+        />
       </div>
     </section>
   );

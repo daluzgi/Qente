@@ -1,7 +1,9 @@
 :root {
   --color-brown-dark: #4e2c23; /* ← usa el hex exacto que tenías */
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

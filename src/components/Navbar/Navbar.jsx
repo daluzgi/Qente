@@ -1,14 +1,28 @@
-import { useState } from "react";
+// src/components/Navbar/Navbar.jsx
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import { BsWhatsapp } from "react-icons/bs";
+import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
   const navItems = [
-    { label: "Restaurant", href: "#restaurant" },
-    { label: "Reservas", href: "#reservas" },
+    { label: "Restaurant", href: "#restaurant", internal: true },
+    { label: "Historia", href: "#historia", internal: true },
+    {
+      label: "Menú",
+      href: "https://drive.google.com/file/d/10VIbJ6-3hAnZDF1yirGkq68N44fHpUoY/preview",
+      internal: false,
+    },
+    { label: "Productos", href: "#productos", internal: true },
+    {
+      label: "Reservas",
+      href: "https://wa.me/5491161804991", // WhatsApp
+      internal: false,
+    },
   ];
+
+  const linkClasses =
+    "font-sansBrand text-sm font-medium text-white hover:text-gold transition-colors duration-300";
 
   return (
     <Disclosure
@@ -17,15 +31,15 @@ export default function Navbar() {
     >
       {({ open }) => (
         <>
-          {/* contenedor principal */}
+          {/* ────────── Barra principal ────────── */}
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               {/* logo */}
-              <Link to="/" className="flex items-center gap-2">
+              <HashLink to="#hero" className="flex items-center gap-2">
                 <img src="/img/logo1.png" alt="Qente logo" className="h-10" />
-              </Link>
+              </HashLink>
 
-              {/* icono hamburguesa */}
+              {/* botón hamburguesa (mobile) */}
               <div className="flex lg:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">
                   {open ? (
@@ -36,52 +50,41 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
 
-              {/* menú desktop */}
-              <div className="hidden lg:flex items-center gap-6">
-                {navItems.map(({ label, href }) => (
+              {/* links desktop */}
+              <nav className="hidden lg:flex items-center gap-6">
+                {navItems.map(({ label, href, internal }) => (
                   <a
                     key={href}
                     href={href}
-                    className="text-sm font-medium text-white hover:text-gold transition"
+                    {...(!internal && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
+                    className={linkClasses}
                   >
                     {label}
                   </a>
                 ))}
-
-                <a
-                  href="https://wa.me/54911XXXXYYYY"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 rounded-lg bg-emerald-500/90 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-500 transition"
-                >
-                  <BsWhatsapp size={16} /> WhatsApp
-                </a>
-              </div>
+              </nav>
             </div>
           </div>
 
-          {/* menú mobile */}
+          {/* ────────── Menú mobile ────────── */}
           <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 bg-neutral-900 px-4 pb-4 pt-2">
-              {navItems.map(({ label, href }) => (
+              {navItems.map(({ label, href, internal }) => (
                 <a
                   key={href}
                   href={href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-white/10"
-                  onClick={() => setTimeout(() => window.scrollTo({ top: 0 }))} // cierra y navega
+                  {...(!internal && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  className={`block rounded-md px-3 py-2 text-base ${linkClasses}`}
                 >
                   {label}
                 </a>
               ))}
-
-              <a
-                href="https://wa.me/54911XXXXYYYY"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-md bg-emerald-500/90 px-3 py-2 text-base font-medium text-white hover:bg-emerald-500"
-              >
-                <BsWhatsapp size={18} /> WhatsApp
-              </a>
             </div>
           </Disclosure.Panel>
         </>

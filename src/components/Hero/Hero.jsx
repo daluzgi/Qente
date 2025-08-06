@@ -1,27 +1,35 @@
 export default function Hero() {
   return (
     <header
-      id="restaurant"
+      id="hero"
       className="
-        relative isolate
-        flex flex-col items-center justify-center
+        relative isolate flex flex-col items-center justify-center
         min-h-[75vh] md:min-h-screen
         bg-[url('/images/Hero.jpg')] bg-cover bg-center
         text-white text-center
       "
     >
-      {/* overlay semi-oscuro */}
+      {/* overlay */}
       <span className="absolute inset-0 bg-black/40 -z-10" />
 
-      {/* título */}
-      <h1 className="text-5xl md:text-7xl leading-tight font-semibold tracking-widest">
-        <span className="font-extrabold">QENTE&nbsp;</span>
-        <span className="font-light">MIKHUY</span>
+      {/* título con pesos distintos */}
+      <h1
+        className="
+          font-serifBrand text-5xl md:text-7xl leading-tight tracking-wide
+        "
+      >
+        <span className="font-semibold">QENTE&nbsp;</span>
+        <span className="font-normal">MIKHUY</span>
       </h1>
 
-      {/* sub-título */}
-      <p className="mt-4 text-lg md:text-2xl tracking-wider">
-        COCINA&nbsp;DE&nbsp;CAMPO
+      {/* tagline */}
+      <p
+        className="
+          mt-4 font-sansBrand font-semibold tracking-wideBrand
+          uppercase text-sm md:text-base
+        "
+      >
+        Cocina&nbsp;de&nbsp;campo
       </p>
     </header>
   );

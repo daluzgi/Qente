@@ -16,8 +16,10 @@ export default function SectionCard({ title, text, img, to, reverse }) {
       <div className="basis-1/2 flex items-stretch bg-gold/80 min-w-0">
         {/* Wrapper solo para padding */}
         <div className="flex flex-col justify-center w-full p-6 sm:p-8 lg:p-12">
-          <h2 className="text-2xl font-bold mb-4">{title}</h2>
-          <p className="leading-relaxed">{text}</p>
+          <h2 className="font-serifBrand font-bold text-3xl md:text-4xl mb-4">
+            {title}
+          </h2>
+          <p className="font-sansBrand leading-relaxed">{text}</p>
 
           {to && (
             <a

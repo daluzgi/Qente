@@ -1,14 +1,15 @@
+// src/components/VideoBanner/VideoBanner.jsx
 export default function VideoBanner() {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <section id="restaurant" className="w-full overflow-hidden">
       <video
         src="/video/video.mp4"
         autoPlay
         loop
         muted
         playsInline
-        style={{ width: "100%", display: "block" }}
+        className="block w-full"
       />
-    </div>
+    </section>
   );
 }
