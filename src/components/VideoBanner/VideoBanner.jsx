@@ -3,7 +3,7 @@ export default function VideoBanner() {
   return (
     <section id="restaurant" className="w-full overflow-hidden">
       <video
-        src="/video/video.mp4"
+        src="/video/video-720.mp4"
         autoPlay
         loop
         muted
