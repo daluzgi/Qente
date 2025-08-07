@@ -16,12 +16,12 @@ export default function Team() {
       {/* grid de 2 columnas en desktop, 1 en mobile */}
       <div className="grid grid-cols-1 md:grid-cols-2">
         <img
-          src="/images/Team1.jpg"
+          src="/images/webp/Team1.webp"
           alt="Miembro del equipo"
           className="w-full h-[45vh] md:h-[65vh] object-cover"
         />
         <img
-          src="/images/Team2.jpg"
+          src="/images/webp/Team2.webp"
           alt="Miembro del equipo"
           className="w-full h-[45vh] md:h-[65vh] object-cover"
         />

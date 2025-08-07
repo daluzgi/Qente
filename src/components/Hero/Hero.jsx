@@ -5,7 +5,7 @@ export default function Hero() {
       className="
         relative isolate flex flex-col items-center justify-center
         min-h-[75vh] md:min-h-screen
-        bg-[url('/images/Hero.jpg')] bg-cover bg-center
+        bg-[url('/images/webp/Hero.webp')] bg-cover bg-center
         text-white text-center
       "
     >
