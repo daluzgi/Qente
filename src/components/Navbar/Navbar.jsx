@@ -7,7 +7,7 @@ import { HashLink } from "react-router-hash-link";
 export default function Navbar() {
   const navItems = [
     { label: "Restaurant", href: "#restaurant", internal: true },
-    { label: "Historia", href: "#historia", internal: true },
+    { label: "Historia", href: "#history", internal: true },
     {
       label: "Menú",
       href: "https://drive.google.com/file/d/10VIbJ6-3hAnZDF1yirGkq68N44fHpUoY/preview",

@@ -4,6 +4,7 @@ import VideoBanner from "../components/VideoBanner/VideoBanner";
 import Footer from "../components/Footer/Footer";
 import Team from "../components/Team/Team";
 import Carousel from "../components/Carousel/Carousel";
+import History from "../components/History/History";
 
 export default function Home() {
   return (
@@ -51,8 +52,8 @@ export default function Home() {
       </section>
 
       <VideoBanner />
+      <History />
       <Team />
-
       <Footer />
     </>
   );
