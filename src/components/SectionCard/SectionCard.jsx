@@ -1,37 +1,42 @@
+// src/components/SectionCard/SectionCard.jsx
+import { motion } from "framer-motion";
+
 export default function SectionCard({ title, text, img, to, reverse }) {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+      /* —— contenedor centrado + margen lateral —— */
       className={`
+        mx-auto max-w-6xl px-4
         flex flex-col md:flex-row
         ${reverse ? "md:flex-row-reverse" : ""}
         min-h-[480px] lg:min-h-[560px]
       `}
     >
-      {/* Imagen */}
-      <div className="basis-1/2 min-w-0">
-        <img src={img} alt={title} className="w-full h-full object-cover" />
+      {/* Imagen 2/3 en desktop */}
+      <div className="basis-full md:basis-2/3 min-w-0">
+        <img
+          src={img}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover rounded-lg shadow-lg"
+        />
       </div>
 
-      {/* Panel dorado: fondo aquí, no en el wrapper */}
-      <div className="basis-1/2 flex items-stretch bg-gold/80 min-w-0">
-        {/* Wrapper solo para padding */}
+      {/* Texto 1/3 en desktop */}
+      <div className="basis-full md:basis-1/3 flex items-stretch bg-gold/80 md:rounded-lg">
         <div className="flex flex-col justify-center w-full p-6 sm:p-8 lg:p-12">
           <h2 className="font-serifBrand font-bold text-3xl md:text-4xl mb-4">
             {title}
           </h2>
-          <p className="font-sansBrand leading-relaxed">{text}</p>
 
-          {to && (
-            <a
-              href={to}
-              className="inline-block mt-6 px-6 py-2 rounded-lg
-                         bg-black/90 text-white hover:bg-black transition"
-            >
-              Reservar
-            </a>
-          )}
+          <p className="font-sansBrand leading-relaxed">{text}</p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

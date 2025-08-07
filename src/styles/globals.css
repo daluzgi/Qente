@@ -4,6 +4,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+.diagonal-top {
+  clip-path: polygon(0 0, 100% 6vw, 100% 100%, 0 100%);
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
