@@ -8,33 +8,50 @@ export default function SectionCard({ title, text, img, to, reverse }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
-      /* —— contenedor centrado + margen lateral —— */
       className={`
-        mx-auto max-w-6xl px-4
-        flex flex-col md:flex-row
+        relative max-w-7xl mx-auto px-6 my-24
+        flex flex-col md:flex-row items-stretch gap-8 md:gap-10
         ${reverse ? "md:flex-row-reverse" : ""}
-        min-h-[480px] lg:min-h-[560px]
       `}
     >
-      {/* Imagen 2/3 en desktop */}
-      <div className="basis-full md:basis-2/3 min-w-0">
+      {/* FOTO */}
+      <div className="basis-full md:basis-[70%]">
         <img
           src={img}
           alt={title}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover rounded-lg shadow-lg"
+          className="w-full h-[420px] md:h-[560px] object-cover rounded-lg shadow-lg"
         />
       </div>
 
-      {/* Texto 1/3 en desktop */}
-      <div className="basis-full md:basis-1/3 flex items-stretch bg-gold/80 md:rounded-lg">
-        <div className="flex flex-col justify-center w-full p-6 sm:p-8 lg:p-12">
+      {/* BLOQUE TEXTO */}
+      <div
+        className={`
+          basis-full md:basis-[30%] flex
+          /* solape lateral en desktop */
+          ${reverse ? "md:-mr-24" : "md:-ml-24"}
+          /* solape vertical en mobile */
+          -mt-16 md:mt-0
+        `}
+      >
+        <div className="m-auto bg-[#F8F5EF]/95 backdrop-blur-sm border-t-4 md:border-t-0 md:border-l-4 border-gold rounded-lg shadow-xl px-8 py-10 max-w-[440px]">
           <h2 className="font-serifBrand font-bold text-3xl md:text-4xl mb-4">
             {title}
           </h2>
 
-          <p className="font-sansBrand leading-relaxed">{text}</p>
+          <p className="font-sansBrand leading-relaxed whitespace-pre-line">
+            {text}
+          </p>
+
+          {to && (
+            <a
+              href={to}
+              className="inline-block mt-6 px-6 py-2 rounded-lg bg-black text-white hover:bg-black/80 transition"
+            >
+              Reservar
+            </a>
+          )}
         </div>
       </div>
     </motion.section>
