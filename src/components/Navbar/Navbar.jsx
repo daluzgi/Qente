@@ -1,8 +1,6 @@
 // src/components/Navbar/Navbar.jsx
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
   const navItems = [
@@ -16,7 +14,7 @@ export default function Navbar() {
     { label: "Productos", href: "#productos", internal: true },
     {
       label: "Reservas",
-      href: "https://wa.me/5491161804991", // WhatsApp
+      href: "https://wa.me/5491161804991",
       internal: false,
     },
   ];
@@ -31,13 +29,13 @@ export default function Navbar() {
     >
       {({ open }) => (
         <>
-          {/* ────────── Barra principal ────────── */}
+          {/* barra principal */}
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
-              {/* logo */}
-              <HashLink to="#hero" className="flex items-center gap-2">
+              {/* logo → ancla al hero */}
+              <a href="/#hero" className="flex items-center gap-2">
                 <img src="/img/logo1.png" alt="Qente logo" className="h-10" />
-              </HashLink>
+              </a>
 
               {/* botón hamburguesa (mobile) */}
               <div className="flex lg:hidden">
@@ -69,12 +67,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ────────── Menú mobile ────────── */}
+          {/* menú mobile: usar Disclosure.Button como <a> para que se cierre */}
           <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 bg-neutral-900 px-4 pb-4 pt-2">
               {navItems.map(({ label, href, internal }) => (
-                <a
+                <Disclosure.Button
                   key={href}
+                  as="a"
                   href={href}
                   {...(!internal && {
                     target: "_blank",
@@ -83,7 +82,7 @@ export default function Navbar() {
                   className={`block rounded-md px-3 py-2 text-base ${linkClasses}`}
                 >
                   {label}
-                </a>
+                </Disclosure.Button>
               ))}
             </div>
           </Disclosure.Panel>
