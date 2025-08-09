@@ -1,7 +1,8 @@
 // src/components/SectionCard/SectionCard.jsx
 import { motion } from "framer-motion";
+import { WHATSAPP_URL } from "../../config/links";
 
-export default function SectionCard({ title, text, img, to, reverse }) {
+export default function SectionCard({ title, text, img, reverse }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 40 }}
@@ -9,9 +10,10 @@ export default function SectionCard({ title, text, img, to, reverse }) {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
       className={`
-        relative max-w-7xl mx-auto px-6 my-24
-        flex flex-col md:flex-row items-stretch gap-8 md:gap-10
+        relative flex flex-col md:flex-row
         ${reverse ? "md:flex-row-reverse" : ""}
+        items-stretch gap-8 md:gap-10
+        max-w-7xl mx-auto px-6 my-24
       `}
     >
       {/* FOTO */}
@@ -25,13 +27,11 @@ export default function SectionCard({ title, text, img, to, reverse }) {
         />
       </div>
 
-      {/* BLOQUE TEXTO */}
+      {/* TEXTO */}
       <div
         className={`
           basis-full md:basis-[30%] flex
-          /* solape lateral en desktop */
           ${reverse ? "md:-mr-24" : "md:-ml-24"}
-          /* solape vertical en mobile */
           -mt-16 md:mt-0
         `}
       >
@@ -39,19 +39,19 @@ export default function SectionCard({ title, text, img, to, reverse }) {
           <h2 className="font-serifBrand font-bold text-3xl md:text-4xl mb-4">
             {title}
           </h2>
-
           <p className="font-sansBrand leading-relaxed whitespace-pre-line">
             {text}
           </p>
 
-          {to && (
-            <a
-              href={to}
-              className="inline-block mt-6 px-6 py-2 rounded-lg bg-black text-white hover:bg-black/80 transition"
-            >
-              Reservar
-            </a>
-          )}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-6 py-2 rounded-lg bg-black text-white hover:bg-black/80 transition"
+            aria-label="Reservar por WhatsApp"
+          >
+            Reservar
+          </a>
         </div>
       </div>
     </motion.section>

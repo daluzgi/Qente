@@ -59,6 +59,15 @@ export default function Home() {
       <VideoBanner />
       <History />
       <Team />
+      <div id="productos" className="my-24">
+        <SectionCard
+          title="Descubre nuestros productos"
+          text={`Consulta mas en tu visita al restaurant.`}
+          img="/images/webp/Product.webp"
+          to="#reservas"
+          reverse
+        />
+      </div>
       <Footer />
     </>
   );
