@@ -8,6 +8,15 @@ html {
 .diagonal-top {
   clip-path: polygon(0 0, 100% 6vw, 100% 100%, 0 100%);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

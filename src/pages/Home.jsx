@@ -21,8 +21,6 @@ export default function Home() {
           "/images/webp/Plato4.webp",
           "/images/webp/Plato5.webp",
           "/images/webp/Plato6.webp",
-          "/images/webp/Plato7.webp",
-          "/images/webp/Plato8.webp",
         ]}
       />
 
