@@ -8,13 +8,13 @@ export default function Navbar() {
     { label: "Historia", href: "#history", internal: true },
     {
       label: "Menú",
-      href: "https://drive.google.com/file/d/10VIbJ6-3hAnZDF1yirGkq68N44fHpUoY/preview",
+      href: "https://drive.google.com/file/d/1xLj2ycF2LmW8isGGH_8IukWE297tuvjy/preview",
       internal: false,
     },
     { label: "Productos", href: "#productos", internal: true },
     {
       label: "Reservas",
-      href: "https://wa.me/5491161804991",
+      href: "https://wa.me/5491121847446",
       internal: false,
     },
   ];

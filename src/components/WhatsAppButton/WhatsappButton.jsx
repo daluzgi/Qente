@@ -5,7 +5,7 @@ export default function WhatsappButton() {
   const msg = "Hola! Quisiera reservar en Qente";
   return (
     <a
-      href={`https://wa.me/5491161804991?text=${encodeURIComponent(msg)}`}
+      href={`https://wa.me/5491121847446?text=${encodeURIComponent(msg)}`}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-float"
