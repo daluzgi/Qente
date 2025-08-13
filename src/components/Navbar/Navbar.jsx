@@ -2,6 +2,12 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
+const WA_NUMBER = "5491121847446";
+const WA_TEXT = encodeURIComponent(
+  "Hola Qente Mikhuy! Quisiera hacer una reserva."
+);
+const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
+
 export default function Navbar() {
   const navItems = [
     { label: "Restaurant", href: "#restaurant", internal: true },
@@ -14,7 +20,7 @@ export default function Navbar() {
     { label: "Productos", href: "#productos", internal: true },
     {
       label: "Reservas",
-      href: "https://wa.me/5491121847446",
+      href: WA_URL, // ← WhatsApp con texto preestablecido
       internal: false,
     },
   ];
@@ -67,7 +73,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* menú mobile: usar Disclosure.Button como <a> para que se cierre */}
+          {/* menú mobile: usa Disclosure.Button como <a> para que se cierre */}
           <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 bg-neutral-900 px-4 pb-4 pt-2">
               {navItems.map(({ label, href, internal }) => (
