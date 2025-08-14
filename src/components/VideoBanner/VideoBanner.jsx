@@ -1,5 +1,19 @@
 // src/components/VideoBanner/VideoBanner.jsx
+import { useEffect, useState } from "react";
+
 export default function VideoBanner() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () =>
+      window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
+    setIsMobile(checkMobile());
+
+    window.addEventListener("resize", () => setIsMobile(checkMobile()));
+    return () =>
+      window.removeEventListener("resize", () => setIsMobile(checkMobile()));
+  }, []);
+
   return (
     <section
       id="restaurant"
@@ -10,7 +24,7 @@ export default function VideoBanner() {
       "
     >
       <div className="mx-auto w-full max-w-6xl px-4">
-        {/* Título + subtítulo (contraste para fondo blanco) */}
+        {/* Título + subtítulo */}
         <div className="text-center mb-6 md:mb-8">
           <h2 className="font-serifBrand font-bold text-3xl md:text-4xl text-neutral-900">
             Restaurant
@@ -25,13 +39,16 @@ export default function VideoBanner() {
         <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5 bg-black">
           <div className="aspect-video">
             <video
-              src="/video/video.mp4" /* o tu 720/1080 */
+              src="/video/video.mp4"
               poster="/images/video-poster.webp"
               preload="none"
-              autoPlay
-              loop
-              muted
-              playsInline
+              {...(!isMobile && {
+                autoPlay: true,
+                muted: true,
+                playsInline: true,
+                loop: true,
+              })}
+              {...(isMobile && { controls: true })}
               className="w-full h-full object-cover"
             />
           </div>
