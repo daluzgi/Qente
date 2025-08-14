@@ -12,8 +12,8 @@ export default function SectionCard({ title, text, img, reverse }) {
       className={`
         relative flex flex-col md:flex-row
         ${reverse ? "md:flex-row-reverse" : ""}
-        items-stretch gap-8 md:gap-10
-        max-w-7xl mx-auto px-6 my-24
+        items-stretch gap-6 md:gap-10
+        max-w-7xl mx-auto px-6 my-8 md:my-24
       `}
     >
       {/* FOTO */}
@@ -23,7 +23,7 @@ export default function SectionCard({ title, text, img, reverse }) {
           alt={title}
           loading="lazy"
           decoding="async"
-          className="w-full h-[420px] md:h-[560px] object-cover rounded-lg shadow-lg"
+          className="w-full h-[320px] md:h-[560px] object-cover rounded-lg shadow-lg"
         />
       </div>
 
@@ -32,10 +32,10 @@ export default function SectionCard({ title, text, img, reverse }) {
         className={`
           basis-full md:basis-[30%] flex
           ${reverse ? "md:-mr-24" : "md:-ml-24"}
-          -mt-16 md:mt-0
+          -mt-8 md:mt-0
         `}
       >
-        <div className="m-auto bg-[#F8F5EF]/95 backdrop-blur-sm border-t-4 md:border-t-0 md:border-l-4 border-gold rounded-lg shadow-xl px-8 py-10 max-w-[440px]">
+        <div className="m-auto bg-[#F8F5EF]/95 backdrop-blur-sm border-t-4 md:border-t-0 md:border-l-4 border-gold rounded-lg shadow-xl px-6 py-8 md:px-8 md:py-10 max-w-[440px]">
           <h2 className="font-serifBrand font-bold text-3xl md:text-4xl mb-4">
             {title}
           </h2>

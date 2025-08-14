@@ -6,6 +6,7 @@ import VideoBanner from "../components/VideoBanner/VideoBanner";
 import History from "../components/History/History";
 import Team from "../components/Team/Team";
 import Footer from "../components/Footer/Footer";
+import Divider from "../components/Divider/Divider";
 
 export default function Home() {
   return (
@@ -36,6 +37,8 @@ export default function Home() {
         ]}
       />
 
+      <Divider className="my-12 md:my-16" variant="gradient" width="1/3" />
+
       {/* Tarjetas descriptivas */}
       <section className="flex flex-col gap-12 my-20">
         <SectionCard
@@ -54,9 +57,17 @@ export default function Home() {
         />
       </section>
 
+      <Divider className="my-12 md:my-16" variant="gradient" width="1/3" />
+
       <VideoBanner />
+      <Divider className="my-12 md:my-16" variant="gradient" width="1/3" />
+
       <History />
+      <Divider className="my-12 md:my-16" variant="gradient" width="1/3" />
+
       <Team />
+      <Divider className="my-12 md:my-16" variant="gradient" width="1/3" />
+
       <div id="productos" className="my-24">
         <SectionCard
           title="Descubre nuestros productos"
