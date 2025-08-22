@@ -15,7 +15,7 @@ export default function Footer() {
       {/* texto */}
       <div className="text-center flex-grow font-sansBrand leading-tight">
         <p className="mb-1">
-          Diego Gaynor, Buenos Aires • Viernes a Domingo 12-23&nbsp;hs
+          Diego Gaynor, Buenos Aires • Sáb 12–23 h · Dom 12–15 h
         </p>
         <p className="mb-0 text-sm">© 2025 Qente Mikhuy</p>
       </div>
